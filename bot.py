@@ -9,11 +9,8 @@ timeout =  36000
 async def on_ready():
     print("The bot is ready.")
 
-@client.command()
-async def message():
-    channel = client.get_channel(706775759615950908)
-    while True:
-        await channel.send("!add-money-role cash <@805495893766963201> 100")
-        await asyncio.sleep(timeout)
+@client.command(pass_context=True)
+async def message(ctx):
+    await ctx.message.send("ciao")
 
 client.run("ODA2NTgyMjMwODUxMTI1Mjkx.YBriPQ.iZhDsrK2fRzSEkmL4rM30gi4p8g")
