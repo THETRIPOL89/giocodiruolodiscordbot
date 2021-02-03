@@ -8,6 +8,9 @@ timeout =  36000
 @client.event
 async def on_ready():
     print("The bot is ready.")
+
+@client.command()
+async def message():
     channel = client.get_channel(706775759615950908)
     while True:
         await channel.send("!add-money-role cash <@805495893766963201> 100")
